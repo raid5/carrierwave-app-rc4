@@ -1,0 +1,17 @@
+<h1>New Post</h1>
+
+<%= form_for @post do |f| %>
+  <div class='field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class='field'>
+    <%= f.fields_for :photos, @post.photos do |pf| %>
+      <%= pf.label :photo %>
+      <%= pf.file_field :photo %>
+    <% end %>
+  </div>
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>

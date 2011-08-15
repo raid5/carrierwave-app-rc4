@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+
+<% @posts.each do |post| %>
+  <p><%= post.title %></p>
+  <% post.photos.each do |photo| %>
+    <%= image_tag photo.photo_url(:thumb) %>
+  <% end %>
+<% end %>
